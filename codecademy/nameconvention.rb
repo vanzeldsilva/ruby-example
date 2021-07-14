@@ -1,0 +1,2 @@
+name = "Vanzel!"
+puts name 
