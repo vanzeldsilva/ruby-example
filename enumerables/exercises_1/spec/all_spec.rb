@@ -11,6 +11,7 @@ RSpec.describe 'all test' do
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = numbers.all? do |number|
       # Your code goes here
+      
     end
     expect(all_zeros).to eq(false)
   end
