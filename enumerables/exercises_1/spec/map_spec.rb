@@ -8,23 +8,29 @@ RSpec.describe 'map' do
     expect(capitalized_names).to eq(["Alice", "Bob", "Charlie"])
   end
 
-  xit 'doubles' do
+  it 'doubles' do
     numbers = [1, 2, 3, 4, 5]
     doubles = numbers.map do |number|
       # Your code goes here
+      number * 2
     end
     expect(doubles).to eq([2, 4, 6, 8, 10])
   end
 
-  xit 'squares' do
+  it 'squares' do
     numbers = [1, 2, 3, 4, 5]
+    squares = numbers.map do |num|
     # Your code goes here
+      num ** 2
+    end
     expect(squares).to eq([1, 4, 9, 16, 25])
   end
 
   xit 'lengths' do
     names = ["alice", "bob", "charlie", "david", "eve"]
     # Your code goes here
+    lengths = names.map do |name|
+
     expect(lengths).to eq([5, 3, 7, 5, 3])
   end
 
@@ -42,7 +48,10 @@ RSpec.describe 'map' do
 
   xit 'words with no vowels' do
     words = ["green", "sheep", "travel", "least", "boat"]
+    without_vowels = words.map do |word|
     # Your code goes here
+    word.delete("a", "e", "y", "i", "o", "u", "y")
+  end
     expect(without_vowels).to eq(["grn", "shp", "trvl", "lst", "bt"])
   end
 
@@ -52,4 +61,3 @@ RSpec.describe 'map' do
     expect(trimmed).to eq(["do", "ca", "mous", "fro", "platypu"])
   end
 end
-
