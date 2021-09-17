@@ -21,6 +21,7 @@ RSpec.describe 'map pattern' do
   xit 'squares' do
     numbers = [1, 2, 3, 4, 5]
     squares = []
+    numbers.map do |num|
     # Your code goes here
     expect(squares).to eq([1, 4, 9, 16, 25])
   end
