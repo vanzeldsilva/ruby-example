@@ -26,11 +26,12 @@ RSpec.describe 'map' do
     expect(squares).to eq([1, 4, 9, 16, 25])
   end
 
-  xit 'lengths' do
+  it 'lengths' do
     names = ["alice", "bob", "charlie", "david", "eve"]
     # Your code goes here
     lengths = names.map do |name|
-
+      name.length
+    end
     expect(lengths).to eq([5, 3, 7, 5, 3])
   end
 
@@ -40,17 +41,20 @@ RSpec.describe 'map' do
     expect(zip_codes).to eq(["00234", "00010", "09119", "38881"])
   end
 
-  xit 'backwards' do
+  it 'backwards' do
     names = ["alice", "bob", "charlie", "david", "eve"]
     # Your code goes here
+    backwards = names.map do |name|
+      name.reverse
+    end
     expect(backwards).to eq(["ecila", "bob", "eilrahc", "divad", "eve"])
   end
 
-  xit 'words with no vowels' do
+  it 'words with no vowels' do
     words = ["green", "sheep", "travel", "least", "boat"]
     without_vowels = words.map do |word|
     # Your code goes here
-    word.delete("a", "e", "y", "i", "o", "u", "y")
+    word.delete('aeiou')
   end
     expect(without_vowels).to eq(["grn", "shp", "trvl", "lst", "bt"])
   end
