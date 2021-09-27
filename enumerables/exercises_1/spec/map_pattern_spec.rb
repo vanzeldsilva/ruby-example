@@ -35,9 +35,13 @@ RSpec.describe 'map pattern' do
     expect(lengths).to eq([5, 3, 7, 5, 3])
   end
 
-  xit 'normalize zip codes' do
+  it 'normalize zip codes' do
     numbers = [234, 10, 9119, 38881]
     # Your code goes here
+    zip_code = []
+   numbers.each do |num|
+    zip_code << "%05d" % num
+   end
     expect(zip_code).to eq(["00234", "00010", "09119", "38881"])
   end
 
