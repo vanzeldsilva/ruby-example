@@ -65,9 +65,13 @@ RSpec.describe 'map pattern' do
     expect(without_vowels).to  eq(["grn", "shp", "trvl", "lst", "bt"])
   end
 
-  xit 'trims last letter' do
+  it 'trims last letter' do
     animals = ["dog", "cat", "mouse", "frog", "platypus"]
     # Your code goes here
+    trimmed = []
+    animals.each do |animal|
+      trimmed << animal.slice(-1)
+    end
     expect(trimmed).to eq(["do", "ca", "mous", "fro", "platypu"])
   end
 end
