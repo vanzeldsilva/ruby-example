@@ -8,19 +8,23 @@ RSpec.describe 'reduce pattern' do
     expect(sum).to eq(473)
   end
 
-  xit 'subtracts a list of numbers' do
+  it 'subtracts a list of numbers' do
     numbers = [28, 12, 38, 1, 91]
     difference = 0
     numbers.each do |number|
       # Your code goes here
+      difference = difference - number
     end
     expect(difference).to eq(-170)
   end
 
-  xit 'multiplies a list of numbers' do
+  it 'multiplies a list of numbers' do
     numbers = [2, 3, 5, 7]
     product = 1
     # Your code goes here
+    numbers.each do |number|
+      product = product * number
+    end
     expect(product).to eq(210)
   end
 
@@ -31,10 +35,13 @@ RSpec.describe 'reduce pattern' do
     expect(phrase).to eq('one FISH two FISH red FISH BLUE FISH')
   end
 
-  xit 'divide 560 by a bunch of numbers' do
+  it 'divide 560 by a bunch of numbers' do
     numbers = [2, 2, 2, 5, 7]
     quotient = 560
     # Your code goes here
+    numbers.each do |number|
+      quotient = quotient / number
+    end
     expect(quotient).to eq(2)
   end
 
