@@ -94,13 +94,15 @@ RSpec.describe 'inject pattern test' do
     expect(toppings).to eq(["pepperoni", "sausage", "olives", "peppers", "onions"])
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     elements = [["a", 1], ["b", 9], ["c", 21]]
     # Iterate over the elements array defined above
     # to find the sum of all the integers
-
     # Your Code Here
-
+    sum_of_second_values = []
+    elements.each do |element|
+      elements.flattern!
+    end
     expect(sum_of_second_values).to eq(31)
   end
 
@@ -136,7 +138,7 @@ RSpec.describe 'inject pattern test' do
     expect(total_calories).to eq(6950)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     grades = {
       quizzes: [8, 5, 3, 6, 5],
       tests: [23, 21, 24],
@@ -147,13 +149,12 @@ RSpec.describe 'inject pattern test' do
     # to calculate the final grade. The final grade is
     # calculated by averaging each category together and
     # summing all of the averages
-
     # Your code goes here
 
     expect(final_grade).to eq(85.40)
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     menu = {
       empanadas: {
         flavors: ["chicken", "potato", "steak", "veggie"],
