@@ -9,11 +9,12 @@ RSpec.describe 'reject pattern' do
     expect(filtered).to eq([2, 93, 7, 1, 31, 368])
   end
 
-  xit 'removes vowels' do
+  it 'removes vowels' do
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = []
     letters.each do |letter|
       # Your code goes here
+      remaining << letter unless letter.()
     end
     expect(remaining).to eq(["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"])
   end
@@ -79,37 +80,37 @@ RSpec.describe 'reject pattern' do
     expect(notasaurus).to eq(["narwhal", "eel"])
   end
 
-  xit 'removes numbers' do
+  it 'removes numbers' do
     elements = ["cat", "dog", 23, 81.1, 56, "aimless", 43]
     # Your code goes here
     expected(not_numbers).to eq(["cat", "dog", "aimless"])
   end
 
-  xit 'removes floats' do
+  it 'removes floats' do
     elements = ["cat", "dog", 32.333, 23, 56, "aimless", 43.2]
     # Your code goes here
     expect(not_numbers).to eq(["cat", "dog", 23, 56, "aimless"])
   end
 
-  xit 'removes animals starting with vowels' do
+  it 'removes animals starting with vowels' do
     animals = ["aardvark", "bonobo", "cat", "dog", "elephant"]
     # Your code goes here
     expect(remaining).to eq(["bonobo", "cat", "dog"])
   end
 
-  xit 'removes upcased words' do
+  it 'removes upcased words' do
     words = ["CAT", "dog", "AIMLESS", "Trevor", "butter"]
     # Your code goes here
     expect(remaining).to eq(["dog", "Trevor", "butter"])
   end
 
-  xit 'removes arrays' do
+  it 'removes arrays' do
     elements = ["CAT", ["dog"], 23, [56, 3, 8], "AIMLESS", 43, "butter"]
     # Your code goes here
     expected(remaining).to eq(["CAT", 23, "AIMLESS", 43, "butter"])
   end
 
-  xit 'removes hashes' do
+  it 'removes hashes' do
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
     # Your code goes here
     expect(remaining).to eq(["cat", 23, "aimless", 43])
