@@ -28,10 +28,11 @@ RSpec.describe 'reduce pattern' do
     expect(product).to eq(210)
   end
 
-  xit 'capitalizes key words in phrase' do
+  it 'capitalizes key words in phrase' do
     keywords = ["fish", "blue"]
     phrase = 'one fish two fish red fish blue fish'
     # Your code goes here
+    phrase =
     expect(phrase).to eq('one FISH two FISH red FISH BLUE FISH')
   end
 
@@ -45,14 +46,14 @@ RSpec.describe 'reduce pattern' do
     expect(quotient).to eq(2)
   end
 
-  xit 'subtracts smallest numbers from 100' do
+  it 'subtracts smallest numbers from 100' do
     elements = [[8, 5, 3], [1, 9, 11], [4, 7, 2], [19, 34, 6]]
     difference = 100
     # Your code goes here
     expect(difference).to eq(88)
   end
 
-  xit 'adds all second values together' do
+  it 'adds all second values together' do
     elements = [["a", 1], ["b", 9], ["c", 21]]
     sum = 0
     # Your code goes here
@@ -60,4 +61,3 @@ RSpec.describe 'reduce pattern' do
   end
 
 end
-
