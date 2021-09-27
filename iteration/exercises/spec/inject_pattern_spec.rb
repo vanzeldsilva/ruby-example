@@ -3,15 +3,15 @@ RSpec.describe 'inject pattern test' do
   it 'test 1' do
     numbers = [28, 12, 38, 1, 91]
     # Iterate over the numbers array defined above,
-    # to find the difference of all the numbers
-    difference = 0
-    numbers.each do |number|
-      difference = difference - number
-    end
+     difference = 0
+     numbers.each do |number|
+       difference = difference - number
+     end
+    #a = numbers.inject(0){|difference , number| difference - number }
     expect(difference).to eq(-170)
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     bills = {
       rent: 800,
       car: 240,
@@ -28,7 +28,7 @@ RSpec.describe 'inject pattern test' do
     expect(difference).to eq(-2262)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     numbers = [2, 3, 5, 7]
     # Iterate over the numbers array defined above
     # to find the product of all the numbers
@@ -36,11 +36,12 @@ RSpec.describe 'inject pattern test' do
     product = 1
     numbers.each do |number|
       # Your Code Here
+        product = product * number
     end
     expect(product).to eq(210)
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     scrabble_score = {
       letter_total: 23,
       word_muliplier: 3,
@@ -48,23 +49,24 @@ RSpec.describe 'inject pattern test' do
     }
     # Iterate over the scarbble_score hash defined above
     # to find the product of all the values
-
     product = 1
     scrabble_score.each do |(key, value)|
       # Your Code Here
+      product = product * value
     end
     expect(product).to eq(138)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     airlines = ["Southwest", "Delta", "United", "Frontier"]
     # Iterate over the airlines array defined above to
     # create a hash with the name of the airline as the
     # key and the length of the name as the value
-
     number_of_letters = {}
     # Your Code Here
-
+    airlines.each do |place, num|
+      number_of_letters[place] = place.length
+    end
     expected = {
       "Southwest" => 9,
       "Delta" => 5,
@@ -74,7 +76,7 @@ RSpec.describe 'inject pattern test' do
     expect(number_of_letters).to eq(expected)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     topping_calories = {
       pepperoni: 430,
       sausage: 400,
@@ -86,8 +88,9 @@ RSpec.describe 'inject pattern test' do
     # to create an array of all the toppings
 
     toppings = []
-    # Your Code Here
-
+    topping_calories.each do |top, num|
+    toppings.push top.to_s
+    end
     expect(toppings).to eq(["pepperoni", "sausage", "olives", "peppers", "onions"])
   end
 
