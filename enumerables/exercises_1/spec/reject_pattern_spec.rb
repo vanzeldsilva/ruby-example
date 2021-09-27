@@ -18,41 +18,64 @@ RSpec.describe 'reject pattern' do
     expect(remaining).to eq(["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"])
   end
 
-  xit 'removes numbers divisible by 3' do
+  it 'removes numbers divisible by 3' do
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     remaining = []
     # Your code goes here
+    numbers.each do |num|
+        remaining << num unless num % 3 == 0
+    end
     expect(remaining).to eq([1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20])
   end
 
-  xit 'removes words longer than 3 letters' do
-    skip
+  it 'removes words longer than 3 letters' do
+    #skip
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
     # Your code goes here
-    expected(selected).to eq(["bad", "cat", "dog", "red"])
+    selected = []
+    words.each do |word|
+        selected << word unless word.length > 3
+    end
+    expect(selected).to eq(["bad", "cat", "dog", "red"])
   end
 
-  xit 'removes words ending in e' do
+  it 'removes words ending in e' do
     words = ["are", "you", "strike", "thinking", "belt", "piece", "warble", "sing", "pipe"]
     # Your code goes here
-    expected(selected).to eq(["you", "thinking", "belt", "sing"])
+    selected = []
+    words.each do |word|
+      selected << word unless word.end_with?('e')
+  end
+    expect(selected).to eq(["you", "thinking", "belt", "sing"])
   end
 
-  xit 'removes words ending in ing' do
+  it 'removes words ending in ing' do
     words = ["bring", "finger", "drought", "singing", "bingo", "purposeful"]
     # Your code goes here
+    selected = []
+    words.each do |word|
+      selected << word unless word.end_with?('ing')
+    end
     expect(selected).to eq(["finger", "drought", "bingo", "purposeful"])
   end
 
-  xit 'removes words containing e' do
+  it 'removes words containing e' do
     words = ["four", "red", "five", "blue", "pizza", "purple"]
     # Your code goes here
+    selected = []
+    words.each do |word|
+      selected << word unless word.include?('e')
+    end
     expect(selected).to eq(["four", "pizza"])
   end
 
-  xit 'removes dinosaurs' do
+  it 'removes dinosaurs' do
     animals = ["tyrannosaurus", "narwhal", "eel", "achillesaurus", "qingxiusaurus"]
     # Your code goes here
+    notasaurus = []
+    animals.each do |animal|
+      notasaurus << animal unless animal.include?('saurus')
+    end
     expect(notasaurus).to eq(["narwhal", "eel"])
   end
 
