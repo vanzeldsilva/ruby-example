@@ -23,7 +23,6 @@ RSpec.describe 'select pattern' do
         evens[name] = number
       end
     end
-
     expected = {
       two: 2,
       four: 4
@@ -31,17 +30,16 @@ RSpec.describe 'select pattern' do
     expect(evens).to eq(expected)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
     greater_than_four = []
     rainbow.each do |color|
-      #Your Code Here
-    end
-
+      greater_than_four << color if color.length > 4
+  end
     expect(greater_than_four).to eq(["orange", "yellow", "green", "indigo", "violet"])
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     rainbow = {
       first: "red",
       second: "orange",
@@ -51,11 +49,13 @@ RSpec.describe 'select pattern' do
       sixth: "indigo",
       seventh: "violet"
     }
+    #Your Code Here
     greater_than_four = {}
-    rainbow.each do |position, color|
-      #Your Code Here
+    rainbow.each do |num, color|
+      if color.length > 4
+        greater_than_four[num] = color
+      end
     end
-
     expected = {
       second: "orange",
       third: "yellow",
@@ -63,27 +63,33 @@ RSpec.describe 'select pattern' do
       sixth: "indigo",
       seventh: "violet"
     }
-    expected(greater_than_four).to eq(expected)
+    expect(greater_than_four).to eq(expected)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     furniture = ["dining table", "bed", "coffee table", "deck chairs"]
     words_with_c = []
     #Your Code Here
-
+    furniture.each do |things|
+      words_with_c << things if things.include?('c')
+    end
     expect(words_with_c).to eq(["coffee table", "deck chairs"])
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     furniture = {
       dining_room: "dining table",
       bedroom: "bed",
       living_room: "coffee table",
       patio: "deck chairs"
     }
-    words_with_c = {}
     #Your Code Here
-
+    words_with_c = {}
+    furniture.each do |area, things|
+      if things.include?('c')
+        words_with_c[area] = things
+      end
+    end
     expected = {
       living_room: "coffee table",
       patio: "deck chairs"
