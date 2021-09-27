@@ -97,11 +97,13 @@ RSpec.describe 'select pattern' do
     expect(words_with_c).to eq(expected)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     meals = ["chips and salsa", "chicken alfredo", "banana pudding"]
     #Your Code Here
-
-    expected(two_words).to eq(["chicken alfredo", "banana pudding"])
+    two_words = []
+    string.split("").each do |sentence|
+end
+    expect(two_words).to eq(["chicken alfredo", "banana pudding"])
   end
 
   xit 'test 8' do
@@ -120,10 +122,13 @@ RSpec.describe 'select pattern' do
   end
 
 
-  xit 'test 9' do
+  it 'test 9' do
     prices = [3, 1.4, 3.5, 2, 4.9, 9.1, 8.0]
     #Your Code Here
-
+    floats = 0
+    prices.each do |num|
+      floats << prices if num.to_f
+    end
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
 
@@ -149,4 +154,3 @@ RSpec.describe 'select pattern' do
     expect(floats).to eq(expected)
   end
 end
-
