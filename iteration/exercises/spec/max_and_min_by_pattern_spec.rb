@@ -57,7 +57,7 @@ RSpec.describe 'max and min by pattern' do
     expect(shortest_word).to eq("nuts")
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     stats = [3001, 431, 1695, 0.27601, 0.340]
     most_digits = stats[0]
     # Your Code Here
@@ -65,7 +65,7 @@ RSpec.describe 'max and min by pattern' do
     expect(most_digits).to eq(0.27601)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     stats = {
       games_played: 3001,
       home_runs: 431,
@@ -91,7 +91,7 @@ RSpec.describe 'max and min by pattern' do
     expect(oldest).to eq(50)
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     ages = {
       abdi: 39,
       hassan: 45,
@@ -105,14 +105,14 @@ RSpec.describe 'max and min by pattern' do
     expect(oldest).to eq(expected)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     programmers = [["katrina", "sandi", "jim", "aaron", "desi"], ["abby", "jon", "susan"]]
     # Your Code Here
 
     expect(fewest_programmers).to eq(["abby", "jon", "susan"])
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     programmers = {ruby: ["katrina", "sandi", "jim", "aaron", "desi"], java: ["abby", "jon", "susan"]}
     # Your Code Here
 
