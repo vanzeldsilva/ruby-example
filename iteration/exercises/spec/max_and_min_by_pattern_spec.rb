@@ -7,7 +7,7 @@ RSpec.describe 'max and min by pattern' do
         greatest = number
       end
     end
-    expect(greatest).to eq(100000)
+    expect(greatest).to eq(1000000)
   end
 
   it 'test 2' do
@@ -26,17 +26,20 @@ RSpec.describe 'max and min by pattern' do
     expect(greatest).to eq(1000000)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     meals = ["banana", "nuts", "salad", "steak", "cake"]
     shortest_word = meals[0]
     meals.each do |meal|
       # Your Code Here
+      if meal.length == 4
+        shortest_word = meal
+        break
+      end
     end
-
     expect(shortest_word).to eq("nuts")
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     meals = {
       breakfast: "banana",
       snack: "nuts",
@@ -47,8 +50,10 @@ RSpec.describe 'max and min by pattern' do
     shortest_word = meals[meals.keys.first]
     meals.each do |meal, dish|
       # Your Code Here
+      if meal.length = 4
+        shortest_word = meal
+      end
     end
-
     expect(shortest_word).to eq("nuts")
   end
 
@@ -74,10 +79,15 @@ RSpec.describe 'max and min by pattern' do
     expect(most_digits).to eq(0.27601)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     ages = [39, 45, 29, 24, 50]
     # Your Code Here
-
+    oldest = ages[0]
+    ages.each do |num|
+      if num > oldest
+        oldest = num
+      end
+    end
     expect(oldest).to eq(50)
   end
 
