@@ -44,7 +44,7 @@ RSpec.describe 'Any Pattern Test' do
     # Your code goes here
     has_multi_word_phrase = false
     phrases.each do |phrase|
-      has_multi_word_phrase = true if 
+      has_multi_word_phrase = true if phrase.split(/[ ?]/).length > 1
     end
     expect(has_multi_word_phrase).to eq(true)
   end
