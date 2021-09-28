@@ -70,7 +70,7 @@ RSpec.describe 'map pattern' do
     # Your code goes here
     trimmed = []
     animals.each do |animal|
-      trimmed << animal.slice(-1)
+      trimmed << animal[0..-2]
     end
     expect(trimmed).to eq(["do", "ca", "mous", "fro", "platypu"])
   end
