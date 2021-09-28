@@ -84,7 +84,7 @@ RSpec.describe 'select pattern' do
     # Your code goes here
     floats = []
     numbers.each do |number|
-      floats << number if ('%.2f' % number)
+      floats << number unless number.integer?
     end
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
@@ -92,12 +92,20 @@ RSpec.describe 'select pattern' do
   it 'arrays' do
     elements = ["CAT", ["dog"], 23, [56, 3, 8], "AIMLESS", 43, "butter"]
     # Your code goes here
+    arrays = []
+    elements.each do |element|
+      arrays << element if element.is_a?(Array)
+    end
     expect(arrays).to eq([["dog"], [56, 3, 8]])
   end
 
   it 'hashes' do
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
     # Your code goes here
+    hashes = []
+    elements.each do |element|
+      hashes << element if element.is_a?(Hash)
+    end
     expect(hashes).to eq([{:dog=>"fido"}, {:stuff=>"things"}])
   end
 end
