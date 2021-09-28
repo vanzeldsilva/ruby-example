@@ -35,9 +35,12 @@ RSpec.describe 'one' do
     expect(exactly_one_time).to eq(true)
   end
 
-  xit 'one double digit number' do
+  it 'one double digit number' do
     numbers = [8, 2, 10, 333, 9, 101]
     # Your code goes here
+    exactly_one_double_digit = numbers.one? do |num|
+      num.digits(2) && num < 3
+    end
     expect(exactly_one_double_digit).to eq(true)
   end
 
