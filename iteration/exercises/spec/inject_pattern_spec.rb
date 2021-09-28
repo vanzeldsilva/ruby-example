@@ -32,7 +32,6 @@ RSpec.describe 'inject pattern test' do
     numbers = [2, 3, 5, 7]
     # Iterate over the numbers array defined above
     # to find the product of all the numbers
-
     product = 1
     numbers.each do |number|
       # Your Code Here
@@ -99,9 +98,9 @@ RSpec.describe 'inject pattern test' do
     # Iterate over the elements array defined above
     # to find the sum of all the integers
     # Your Code Here
-    sum_of_second_values = []
+    sum_of_second_values = 0
     elements.each do |element|
-      elements.flattern!
+       sum_of_second_values = sum_of_second_values + element[-1]
     end
     expect(sum_of_second_values).to eq(31)
   end
