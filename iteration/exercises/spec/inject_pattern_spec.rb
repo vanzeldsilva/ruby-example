@@ -20,7 +20,6 @@ RSpec.describe 'inject pattern test' do
     }
     # Iterate over the bills hash defined above
     # to find the difference of all the values
-
     difference = 0
     bills.each do |(category, amount)|
       difference -= amount
@@ -105,7 +104,7 @@ RSpec.describe 'inject pattern test' do
     expect(sum_of_second_values).to eq(31)
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     toppings = {
       pepperoni: {
         calories: 430,
@@ -131,9 +130,12 @@ RSpec.describe 'inject pattern test' do
     # Iterate over the toppings array defined above to find
     # total calories. You will need to multiply each topping's
     # calorie count by the quantity
-
     # Your Code Here
-
+    total_calories = 0
+      toppings.each do |top, num|
+        cal = num[:calories] * num[:quantity]
+        total_calories = total_calories + cal
+  end
     expect(total_calories).to eq(6950)
   end
 
@@ -174,13 +176,16 @@ RSpec.describe 'inject pattern test' do
     # Iterate over the menu hash above to create a printable
     # version of the menu
     # Your Code Here
+    printable_menu = "Menu:\n"
     menu.each do |dish, details|
-      details[:flavors][2] = "#{details[:flavors][2]} and #{dish}.to_s "
+      details[:flavors][-2] = "#{details[:flavors][-2]} and"
       if details[:gluten_free] == true
-        "#{details[:flavors][2]} and #{dish}.to_s ".join( "(non gluten free)\n" )
+        details[:flavors][-1] = "#{details[:flavors][-1]} #{dish} (gluten free)\n"
       else
-        "#{details[:flavors][2]} and #{dish}.to_s ".join( "(gluten free)\n" )
+        details[:flavors][-1] = "#{details[:flavors][-1]} #{dish} (non gluten free)\n"
       end
+      details[:flavors].insert(0, "-")
+      printable_menu += details[:flavors].join(" ")
     end
   end
     expected =  "Menu:\n"\

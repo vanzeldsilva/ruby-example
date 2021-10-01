@@ -47,9 +47,10 @@ RSpec.describe 'one pattern' do
     numbers = [8, 2, 10, 333, 9, 101]
     # Your code goes here
     count = 0
-    numbers.each do |num|
-        count += 1 if num.digits(2) && num < 3 
-      end
+    numbers.each do |number|
+      digits = num.digits
+      count += 1 if  && digits.length > 1 && num < 3 
+    end
     exactly_one_double_digit = count == 1
     expect(exactly_one_double_digit).to eq(true)
   end

@@ -127,7 +127,7 @@ end
     #Your Code Here
     floats = 0
     prices.each do |num|
-      floats << prices if num.to_f
+      floats << prices unless num.integer?
     end
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
