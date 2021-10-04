@@ -84,7 +84,7 @@ RSpec.describe 'Strings' do
   it 'test 10' do
     greeting = "Hello!!\n\n"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting.sub!('\n\n','\n')
+    actual = greeting.gsub("\n\n", "\n")
     expected = "Hello!!\n"
 
     expect(actual).to eq(expected)
@@ -93,7 +93,7 @@ RSpec.describe 'Strings' do
   it 'test 11' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
+    actual = rhyme.gsub(/e+/, '')
     expected = "ny, mny, miny, mo"
 
     expect(actual).to eq(expected)
@@ -102,7 +102,7 @@ RSpec.describe 'Strings' do
   it 'test 12' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
+    actual = rhyme.delete('aeiou')
     expected = "ny, mny, mny, m"
 
     expect(actual).to eq(expected)
@@ -111,7 +111,7 @@ RSpec.describe 'Strings' do
   it 'test 13' do
     greeting = "Hello World!"
     # In place of the line below, call a method to get the number of characters in the string
-    actual = greeting._____
+    actual = greeting.length
     expected = 12
 
     expect(actual).to eq(expected)
@@ -120,7 +120,7 @@ RSpec.describe 'Strings' do
   it 'test 14' do
     greeting = "Hello World!\n"
     # In place of the line below, call a method to get the number of characters in the string
-    actual = greeting._____
+    actual = greeting.length
     expected = 13
 
     expect(actual).to eq(expected)
@@ -138,7 +138,7 @@ RSpec.describe 'Strings' do
   it 'test 16' do
     greeting = "Hello World!"
     # In place of the line below, call a method to get the number of 'o' in the string
-    actual = greeting.
+    actual = greeting.count("o")
     expected = 2
 
     expect(actual).to eq(expected)
@@ -147,7 +147,7 @@ RSpec.describe 'Strings' do
   it 'test 17' do
     greeting = "Hello World!"
     # In place of the line below, call a method to get the number of vowels in the string
-    actual = greeting._____
+    actual = greeting.count('aeiou')
     expected = 3
 
     expect(actual).to eq(expected)
@@ -176,7 +176,7 @@ RSpec.describe 'Strings' do
     name = "Harry Potter"
     # In place of the line below, use string manipulation to combine the
     #greeting and name variables to acheive the expected outcome
-    actual = _________
+    actual = "#{greeting} #{name}"
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
@@ -186,7 +186,7 @@ RSpec.describe 'Strings' do
     # See if you can use another method than the last test to achieve the same goal:
     greeting = "Hello World, my name is"
     name = "Harry Potter"
-    actual = ________
+    actual = greeting + ' ' + name
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
@@ -195,7 +195,7 @@ RSpec.describe 'Strings' do
   it 'test 22' do
     greeting = "Hello World, my name is"
     name = "Harry Potter"
-    actual = ________
+    actual = "#{greeting} #{name}"
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
