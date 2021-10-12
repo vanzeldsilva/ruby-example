@@ -34,9 +34,12 @@ RSpec.describe 'Any test' do
     expect(has_alice).to eq(false)
   end
 
-  xit 'has a multi word phrase' do
+  it 'has a multi word phrase' do
     phrases = ["Sure!", "OK.", "I have no idea.", "Really?Whatever."]
     # Your code goes here
+    multi_word_phrase = phrases.any? do |phrase|
+        phrase.split(/[ ?]/).length > 1
+      end
     expect(multi_word_phrase).to eq(true)
   end
 

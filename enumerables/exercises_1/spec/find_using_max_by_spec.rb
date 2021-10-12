@@ -2,22 +2,19 @@ RSpec.describe 'max_by' do
   # You get the first test for free... it's already passing.
   it 'longest word' do
     words = ["apple", "banana", "cherry", "date", "eggplant"]
-
     found_word = words.max_by do |word|
       word.length
     end
-
     expect(found_word).to eq("eggplant")
   end
 
   # This one is missing the block inside the loop.
-  xit 'shortest word' do
+  it 'shortest word' do
     words = ["apple", "banana", "cherry", "date", "eggplant"]
-
     found_word = words.max_by do |word|
       # write code here
+      word.size = 4
     end
-
     expect(found_word).to eq("date")
   end
 
@@ -39,11 +36,12 @@ RSpec.describe 'max_by' do
     expect(smallest_array).to eq([:a, :b, :c])
   end
 
-  xit 'biggest number' do
+  it 'biggest number' do
     numbers = [1, 10, 100, 1000, 10000, 1000000]
-
     # write code here
-
+    found = numbers.max_by do |num|
+      num.length
+    end
     expect(found).to eq(1000000)
   end
 
@@ -71,4 +69,3 @@ RSpec.describe 'max_by' do
     expect(fewest_programmers.first).to eq(:java)
   end
 end
-

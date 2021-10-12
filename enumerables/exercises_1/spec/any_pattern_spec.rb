@@ -39,10 +39,13 @@ RSpec.describe 'Any Pattern Test' do
     expect(has_alice).to eq(false)
   end
 
-  xit 'has a multi word phrase' do
+  it 'has a multi word phrase' do
     phrases = ["Sure!", "OK.", "I have no idea.", "Really?Whatever."]
     # Your code goes here
-
+    has_multi_word_phrase = false
+    phrases.each do |phrase|
+      has_multi_word_phrase = true if phrase.split(/[ ?]/).length > 1
+    end
     expect(has_multi_word_phrase).to eq(true)
   end
 
