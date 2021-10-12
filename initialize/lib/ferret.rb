@@ -1,7 +1,18 @@
 class Ferret
+  #getter method
   def name
+    @abc
   end
-  def give_name(give_name)
-    @give_name = name
+  #setter method
+  def give_name(abc)
+    @abc = abc
   end
 end
+
+
+#class Ferret
+#  attr_accessor :name
+#end
+#   f = Ferret.new
+#   f.name = "abc"
+#   f.name
