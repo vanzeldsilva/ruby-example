@@ -15,7 +15,7 @@ RSpec.describe Bag do
     expect(Bag.new.candies).to eq([])
   end
 
-  it 'can put a candy in a bag' do
+  xit 'can put a candy in a bag' do
     bag = Bag.new
 
     candy = Candy.new('Sour frogs')
@@ -25,7 +25,7 @@ RSpec.describe Bag do
     expect(bag.candies).to eq([candy])
   end
 
-  it 'is not empty when it has candies' do
+  xit 'is not empty when it has candies' do
     bag = Bag.new
     bag << Candy.new("Nerds")
 
