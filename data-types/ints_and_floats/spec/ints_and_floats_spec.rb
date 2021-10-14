@@ -2,8 +2,6 @@ RSpec.describe 'ints and floats' do
   it 'test 1' do
     lucky = 7
     unlucky = 13
-    # Using the two variables defined above,
-    # add the lucky number and the unlucky number
     sum = lucky + unlucky
     expect(sum).to eq(20)
   end
@@ -11,8 +9,6 @@ RSpec.describe 'ints and floats' do
   it 'test 2' do
     lucky = 7
     unlucky = 13
-    # Using the two variables defined above,
-    # subtract the unlucky from the lucky
     difference = lucky - unlucky
     expect(difference).to eq(-6)
   end
@@ -20,9 +16,6 @@ RSpec.describe 'ints and floats' do
   it 'test 3' do
     lucky = 7
     unlucky = 13
-    # Using the two variables defined above,
-    # divide unlucky by lucky
-    # NOTE: this is integer division
     quotient = unlucky / lucky
     expect(quotient).to eq(1)
   end
@@ -30,8 +23,6 @@ RSpec.describe 'ints and floats' do
   it 'test 4' do
     lucky = 7
     unlucky = 13
-    # Using the two variables defined above,
-    # divide unlucky by lucky
     quotient = unlucky / lucky.to_f
     expect(quotient).to eq(1.8571428571428572)
   end
@@ -39,8 +30,6 @@ RSpec.describe 'ints and floats' do
   it 'test 5' do
     lucky = 7
     unlucky = 13
-    # Using the two variables defined above,
-    # find the remainder of the unlucky divided by the lucky
     remainder = unlucky % lucky
     expect(remainder).to eq(6)
   end
@@ -49,7 +38,7 @@ RSpec.describe 'ints and floats' do
     lucky = 7
     # Using the variable defined above,
     # find out if the lucky number is even
-    even = lucky.to_i == lucky && lucky.to_i.even?
+    even = lucky.even?
     expect(even).to eq(false)
   end
 
@@ -73,7 +62,7 @@ RSpec.describe 'ints and floats' do
     pi = 3.14
     # Using the variable defined above,
     # round the number to the next highest whole number
-    rounded = pi.ceil
+    rounded = pi.ceil()
     expect(rounded).to eq(4)
   end
 end

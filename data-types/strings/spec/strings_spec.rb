@@ -3,7 +3,7 @@ RSpec.describe 'Strings' do
     name = "alice"
     # In place of the line below, call a method on the name variable
     # defined above to acheive the expected output.
-    actual = name.capitalize
+    actual = name.capitalize!
     expected = "Alice"
 
     expect(actual).to eq(expected)
@@ -48,7 +48,7 @@ RSpec.describe 'Strings' do
   it 'test 6' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.gsub(/tic/, 'cloc')
+    actual = word.gsub!(/ti/, "clo")
     expected = "clocking"
 
     expect(actual).to eq(expected)
@@ -66,7 +66,7 @@ RSpec.describe 'Strings' do
   it 'test 8' do
     greeting = "Hello!!"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting.gsub('!!', '!')
+    actual = greeting.gsub!('!!','!')
     expected = "Hello!"
 
     expect(actual).to eq(expected)
@@ -75,7 +75,7 @@ RSpec.describe 'Strings' do
   it 'test 9' do
     greeting = "Hello!!\n"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting.delete "\n"
+    actual = greeting.strip!
     expected = "Hello!!"
 
     expect(actual).to eq(expected)
@@ -138,7 +138,7 @@ RSpec.describe 'Strings' do
   it 'test 16' do
     greeting = "Hello World!"
     # In place of the line below, call a method to get the number of 'o' in the string
-    actual = greeting.count "o"
+    actual = greeting.count("o")
     expected = 2
 
     expect(actual).to eq(expected)
@@ -156,7 +156,7 @@ RSpec.describe 'Strings' do
   it 'test 18' do
     greeting = "Hello World!"
     # In place of the line below, call a method to check if the string includes 'llo'
-    actual = greeting.include? "llo"
+    actual = greeting.include?("llo")
     expected = true
 
     expect(actual).to eq(expected)
@@ -165,7 +165,7 @@ RSpec.describe 'Strings' do
   it 'test 19' do
     greeting = "Hello World!"
     # In place of the line below, call a method to check if the string includes 'lol'
-    actual = greeting.include? "lol"
+    actual = greeting.include?("lol")
     expected = false
 
     expect(actual).to eq(expected)
@@ -204,7 +204,7 @@ RSpec.describe 'Strings' do
   it 'test 23' do
     phrase = "  \n\t to the moon\n\n\t    "
     # In place of the line below, call a method to acheive the expected outcome
-    actual = phrase.strip
+    actual = phrase.strip!
     expected = "to the moon"
 
     expect(actual).to eq(expected)
